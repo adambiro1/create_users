@@ -13,7 +13,7 @@ function creategroup(){
 
 function createuser(){
 	IFS=',' read -ra linearr <<< "${@}"
-	useradd -p $(openssl passwd "${linearr[0]}")  "${linearr[0]}" 2> /dev/null
+	useradd -p $(openssl passwd "${linearr[0]}")  "${linearr[0]}"
 	passwd -e "${linearr[0]}"
 	
 	
